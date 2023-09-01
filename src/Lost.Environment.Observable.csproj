@@ -1,9 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>11.0</LangVersion>
+    <TargetFrameworks>net6.0-windows7.0;net40</TargetFrameworks>
+    <LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>Lost</RootNamespace>
+    <Version>0.0.1</Version>
 
     <!-- Package stuff -->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -24,6 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net40" Version="1.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="6.0.1"
+                      Condition="'$(TargetFramework)' == 'net6.0-windows7.0'" />
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.18-beta">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <!-- The following is recommended for public projects -->
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>

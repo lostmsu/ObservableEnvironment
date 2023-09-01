@@ -1,13 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>11.0</LangVersion>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
+    <RootNamespace>Lost</RootNamespace>
 
     <IsPackable>false</IsPackable>
-
-    <RootNamespace>ClassLib</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\ClassLib.csproj" />
+    <ProjectReference Include="..\src\Lost.Environment.Observable.csproj" />
   </ItemGroup>
 
 </Project>
+
